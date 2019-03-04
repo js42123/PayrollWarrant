@@ -1,0 +1,150 @@
+﻿@model IEnumerable<PayrollWarrant.Models.T101_PAY_WARNT>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="card contact shadow-sm mb-3 p-1 bg-white rounded">
+                <div class="card-header card-title">
+                    <h4 class="title m-0">Search Results</h4>
+                </div>
+                <div class="card-body">
+
+                    <div style="overflow: scroll;" id="DivMainContent">
+
+                        <table id="tblSearch" style="font-size: .9em" border="1" align="center">
+
+                            <tr class="header" style="text-align:center">
+
+                            <tr>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.FISCAL_YEAR)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.CHECK_NO)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.PAYEE_NAME)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.HEADER_AMT)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.PAYMENT_METHOD)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.CHK_PRINT_DATE)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.VOUCH_NO)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.RefDocNo)
+                                </th>
+
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.DETAIL_AMT)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.DETAIL_TYPE)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.POSTING_DATE)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.SAP_CLRING_DOC_NO)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.SAP_INVOICE_DOC_NO)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.COST_CENTER)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.GL_ACCOUNT)
+                                </th>
+                                <th style="font-size: .8em" col width="auto" align="center">
+                                    @Html.DisplayNameFor(model => model.REISSUE)
+                                </th>
+
+
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td width="auto">
+                                        @Html.DisplayFor(model => item.FISCAL_YEAR)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(model => item.CHECK_NO)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.PAYEE_NAME)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.HEADER_AMT)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.PAYMENT_METHOD)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.CHK_PRINT_DATE)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.VOUCH_NO)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.RefDocNo)
+                                    </td>
+
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.DETAIL_AMT)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.DETAIL_TYPE)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.POSTING_DATE)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.SAP_CLRING_DOC_NO)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.SAP_INVOICE_DOC_NO)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.COST_CENTER)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.GL_ACCOUNT)
+                                    </td>
+                                    <td width="auto">
+                                        @Html.DisplayFor(modelItem => item.REISSUE)
+                                    </td>
+
+
+
+                                </tr>
+
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="DivFooterRow" style="overflow: hidden">
+</div>
+<br />
+
+

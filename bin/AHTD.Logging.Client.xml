@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AHTD.Logging.Client</name>
+    </assembly>
+    <members>
+        <member name="T:AHTD.Logging.AppLoggingService">
+            <summary>
+            Provides methods for logging application messages and errors to the
+            AHTD AppLog database.
+            </summary>
+        </member>
+        <member name="M:AHTD.Logging.IAppLoggingService.LogException(System.Exception,System.Boolean,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Logs an exception's details.
+            </summary>
+            <param name="ex">An exception to log.</param>
+            <param name="unhandled">if set to <c>true</c> exception was unhandled/fatal.</param>
+            <param name="additionalInfo">A collection of key-value pairs to append to the Additional Info section.</param>
+        </member>
+        <member name="M:AHTD.Logging.IAppLoggingService.LogDebugMessage(System.String)">
+            <summary>
+            Logs a debug message.
+            </summary>
+            <param name="message">A message.</param>
+        </member>
+        <member name="M:AHTD.Logging.IAppLoggingService.LogTraceMessage(System.String)">
+            <summary>
+            Logs a trace message.
+            </summary>
+            <param name="message">A message.</param>
+        </member>
+        <member name="F:AHTD.Logging.AppLoggingService.AppNameAppSettingsKey">
+            <summary>
+            The key for configuring the Application Name via the default appSettings section.
+            </summary>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AHTD.Logging.AppLoggingService"/> class.
+            </summary>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">
+            Thrown when the application name setting cannot be found or is blank.
+            </exception>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AHTD.Logging.AppLoggingService"/> class.
+            </summary>
+            <param name="applogServiceType">An AppLog service type.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="applogServiceType"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="applogServiceType"/> does not implement
+            ICommunicationObject or IAppLogService.
+            </exception>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">
+            Thrown when the application name setting cannot be found or is blank.
+            </exception>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.LogEvent(AHTD.Logging.EventType,System.String)">
+            <summary>
+            Logs the message as the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="message">The message to log.</param>
+            <remarks>
+            The actual logging action happens asynchronously on a worker thread.
+            If the log fails it will be saved into isolated storage and
+            re-attempted later.
+            </remarks>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.AHTD#Logging#IAppLoggingService#LogException(System.Exception,System.Boolean,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Logs an exception's details.
+            </summary>
+            <param name="ex">An exception to log.</param>
+            <param name="unhandled">if set to <c>true</c> exception was unhandled/fatal.</param>
+            <param name="additionalInfo">A collection of key-value pairs to append to the Additional Info section.</param>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.AHTD#Logging#IAppLoggingService#LogDebugMessage(System.String)">
+            <summary>
+            Logs a debug message.
+            </summary>
+            <param name="message">A message.</param>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.AHTD#Logging#IAppLoggingService#LogTraceMessage(System.String)">
+            <summary>
+            Logs a trace message.
+            </summary>
+            <param name="message">A message.</param>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.LogException(System.Exception,System.Boolean,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Logs an exception's details.
+            </summary>
+            <param name="ex">An exception to log.</param>
+            <param name="unhandled">if set to <c>true</c> exception was unhandled/fatal.</param>
+            <param name="additionalInfo">A collection of key-value pairs to append to the Additional Info section.</param>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.LogDebugMessage(System.String)">
+            <summary>
+            Logs a debug message.
+            </summary>
+            <param name="message">A message.</param>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.LogTraceMessage(System.String)">
+            <summary>
+            Logs a trace message.
+            </summary>
+            <param name="message">A message.</param>
+        </member>
+        <member name="M:AHTD.Logging.AppLoggingService.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="T:AHTD.Logging.EventType">
+            <summary>
+            Defines a list of valid loggable event types.
+            </summary>
+        </member>
+        <member name="F:AHTD.Logging.EventType.Unspecified">
+            <summary>
+            Infrastructure. This value should not be used by consumers.
+            The value Trace will be substituted.
+            </summary>
+        </member>
+        <member name="F:AHTD.Logging.EventType.Exception">
+            <summary>
+            A caught (but not necessarily handled) exception. Sometimes used
+            for informational purposes but usually error handling.
+            </summary>
+        </member>
+        <member name="F:AHTD.Logging.EventType.UnhandledException">
+            <summary>
+            An unhandled exception, which implies an application crash.
+            </summary>
+        </member>
+        <member name="F:AHTD.Logging.EventType.Trace">
+            <summary>
+            A general message sent via System.Diagnostics.Trace. These are
+            typically for non-sensitive instrumentation purposes.
+            </summary>
+        </member>
+        <member name="F:AHTD.Logging.EventType.Debug">
+            <summary>
+            A general message sent via System.Diagnostics.Debug. These only
+            occur in debug/test builds.
+            </summary>
+        </member>
+    </members>
+</doc>

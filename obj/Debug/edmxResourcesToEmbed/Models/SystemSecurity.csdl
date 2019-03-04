@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SYSTEM_SECURITYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="T000_USERS">
+    <Key>
+      <PropertyRef Name="T000_USERS_PRIMARY_KEY" />
+    </Key>
+    <Property Name="BUDGET" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="USERID_R" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SSN" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="T000_USERS_PRIMARY_KEY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T000_SYSTEM_SEC">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USERID_R" />
+      <PropertyRef Name="BUDGET" />
+      <PropertyRef Name="FUNCTIONAL_AREA" />
+      <PropertyRef Name="PRIORITY" />
+      <PropertyRef Name="DEFAULT_PANEL" />
+      <PropertyRef Name="UPDATED_BY" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="USERID_R" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BUDGET" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FUNCTIONAL_AREA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PRIORITY" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DEFAULT_PANEL" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="UPDATED_BY" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SYSTEM_SECURITYEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T000_USERS" EntityType="Self.T000_USERS" />
+    <EntitySet Name="T000_SYSTEM_SEC" EntityType="Self.T000_SYSTEM_SEC" />
+  </EntityContainer>
+</Schema>

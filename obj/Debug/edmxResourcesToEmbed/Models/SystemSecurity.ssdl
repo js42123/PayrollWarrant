@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SYSTEM_SECURITYModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SYSTEM_SECURITYModelStoreContainer">
+    <EntitySet Name="T000_USERS" EntityType="SYSTEM_SECURITYModel.Store.T000_USERS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T000_SYSTEM_SEC" EntityType="SYSTEM_SECURITYModel.Store.T000_SYSTEM_SEC" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="T000_USERS">
+    <Key>
+      <PropertyRef Name="T000_USERS_PRIMARY_KEY" />
+    </Key>
+    <Property Name="BUDGET" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="UPD_DATE" Type="datetime" Nullable="true" />
+    <Property Name="USERID_R" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="FIRST_NAME" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="LAST_NAME" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="SSN" Type="char" Nullable="false" MaxLength="9" />
+    <Property Name="T000_USERS_PRIMARY_KEY" Type="varchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="T000_SYSTEM_SEC">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USERID_R" />
+      <PropertyRef Name="BUDGET" />
+      <PropertyRef Name="FUNCTIONAL_AREA" />
+      <PropertyRef Name="PRIORITY" />
+      <PropertyRef Name="DEFAULT_PANEL" />
+      <PropertyRef Name="UPDATED_BY" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="USERID_R" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="BUDGET" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="FUNCTIONAL_AREA" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="PRIORITY" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="DEFAULT_PANEL" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="UPD_DATE" Type="datetime" Nullable="true" />
+    <Property Name="UPDATED_BY" Type="char" Nullable="false" MaxLength="15" />
+  </EntityType>
+</Schema>

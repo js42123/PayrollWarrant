@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UserProvModelStoreContainer" CdmEntityContainer="UserProvEntities">
+    <EntitySetMapping Name="AccessRequestActions">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AccessRequestAction)">
+        <MappingFragment StoreEntitySet="AccessRequestActions">
+          <ScalarProperty Name="AccessRequestActionId" ColumnName="AccessRequestActionId" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccessRequests">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AccessRequest)">
+        <MappingFragment StoreEntitySet="AccessRequests">
+          <ScalarProperty Name="AccessRequestId" ColumnName="AccessRequestId" />
+          <ScalarProperty Name="SecurityInstanceId" ColumnName="SecurityInstanceId" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="OriginatorId" ColumnName="OriginatorId" />
+          <ScalarProperty Name="SupervisorApproveDate" ColumnName="SupervisorApproveDate" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="AccessRequestActionId" ColumnName="AccessRequestActionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppAdmins">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AppAdmin)">
+        <MappingFragment StoreEntitySet="AppAdmins">
+          <ScalarProperty Name="DirectoryId" ColumnName="DirectoryId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppBudgets">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AppBudget)">
+        <MappingFragment StoreEntitySet="AppBudgets">
+          <ScalarProperty Name="AppBudgetId" ColumnName="AppBudgetId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppClaims">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AppClaim)">
+        <MappingFragment StoreEntitySet="AppClaims">
+          <ScalarProperty Name="AppClaimId" ColumnName="AppClaimId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AppLocation)">
+        <MappingFragment StoreEntitySet="AppLocations">
+          <ScalarProperty Name="AppLocationId" ColumnName="AppLocationId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppPrerequisites">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AppPrerequisite)">
+        <MappingFragment StoreEntitySet="AppPrerequisites">
+          <ScalarProperty Name="AppPrereqId" ColumnName="AppPrereqId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="RequiredAppId" ColumnName="RequiredAppId" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppRequests">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.AppRequest)">
+        <MappingFragment StoreEntitySet="AppRequests">
+          <ScalarProperty Name="AppRequestId" ColumnName="AppRequestId" />
+          <ScalarProperty Name="AccessRequestId" ColumnName="AccessRequestId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="RequestApproved" ColumnName="RequestApproved" />
+          <ScalarProperty Name="AllowAccess" ColumnName="AllowAccess" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ProcessedBy" ColumnName="ProcessedBy" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Budgets">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Budget)">
+        <MappingFragment StoreEntitySet="Budgets">
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+          <ScalarProperty Name="Budget1" ColumnName="Budget1" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SpecialProject" ColumnName="SpecialProject" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+          <ScalarProperty Name="OU" ColumnName="OU" />
+          <ScalarProperty Name="HomeServerName" ColumnName="HomeServerName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Claims">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Claim)">
+        <MappingFragment StoreEntitySet="Claims">
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrantedAccesses">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.GrantedAccess)">
+        <MappingFragment StoreEntitySet="GrantedAccesses">
+          <ScalarProperty Name="GrantedAccessId" ColumnName="GrantedAccessId" />
+          <ScalarProperty Name="SecurityInstanceId" ColumnName="SecurityInstanceId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+          <ScalarProperty Name="PAHRIndicator" ColumnName="PAHRIndicator" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.LocationType)">
+        <MappingFragment StoreEntitySet="LocationTypes">
+          <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platforms">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Platform)">
+        <MappingFragment StoreEntitySet="Platforms">
+          <ScalarProperty Name="PlatformId" ColumnName="PlatformId" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequiredShareFolders">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.RequiredShareFolder)">
+        <MappingFragment StoreEntitySet="RequiredShareFolders">
+          <ScalarProperty Name="RequiredShareFoldersId" ColumnName="RequiredShareFoldersId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="AppRoleId" ColumnName="AppRoleId" />
+          <ScalarProperty Name="UNCPath" ColumnName="UNCPath" />
+          <ScalarProperty Name="ACLModify" ColumnName="ACLModify" />
+          <ScalarProperty Name="ACLReadExecute" ColumnName="ACLReadExecute" />
+          <ScalarProperty Name="ACLList" ColumnName="ACLList" />
+          <ScalarProperty Name="ACLRead" ColumnName="ACLRead" />
+          <ScalarProperty Name="ACLWrite" ColumnName="ACLWrite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleSecurityTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.RoleSecurityType)">
+        <MappingFragment StoreEntitySet="RoleSecurityTypes">
+          <ScalarProperty Name="RoleSecurityTypeId" ColumnName="RoleSecurityTypeId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="SecurityTypeId" ColumnName="SecurityTypeId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Section)">
+        <MappingFragment StoreEntitySet="Sections">
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="Section1" ColumnName="Section1" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityInstances">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.SecurityInstance)">
+        <MappingFragment StoreEntitySet="SecurityInstances">
+          <ScalarProperty Name="SecurityInstanceId" ColumnName="SecurityInstanceId" />
+          <ScalarProperty Name="DirectoryId" ColumnName="DirectoryId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.SecurityType)">
+        <MappingFragment StoreEntitySet="SecurityTypes">
+          <ScalarProperty Name="SecurityTypeId" ColumnName="SecurityTypeId" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubWorkflows">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.SubWorkflow)">
+        <MappingFragment StoreEntitySet="SubWorkflows">
+          <ScalarProperty Name="XamlId" ColumnName="XamlId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="AllowAccessRequest" ColumnName="AllowAccessRequest" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="RequiresInteraction" ColumnName="RequiresInteraction" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Directories">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Directory)">
+        <MappingFragment StoreEntitySet="Directories">
+          <ScalarProperty Name="DirectoryId" ColumnName="DirectoryId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EmployeeStatus" ColumnName="EmployeeStatus" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+          <ScalarProperty Name="JobItemNo" ColumnName="JobItemNo" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="WorkExtension" ColumnName="WorkExtension" />
+          <ScalarProperty Name="EngineerNumber" ColumnName="EngineerNumber" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="DivisionDistrictIndicator" ColumnName="DivisionDistrictIndicator" />
+          <ScalarProperty Name="CrewNumber" ColumnName="CrewNumber" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ReportsToId" ColumnName="ReportsToId" />
+          <ScalarProperty Name="DeleteFlag" ColumnName="DeleteFlag" />
+          <ScalarProperty Name="DeleteFlagDate" ColumnName="DeleteFlagDate" />
+          <ScalarProperty Name="TerminalServices" ColumnName="TerminalServices" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DateEnabled" ColumnName="DateEnabled" />
+          <ScalarProperty Name="DateDisabled" ColumnName="DateDisabled" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="LastChangeUser" ColumnName="LastChangeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.Message)">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="WorkflowId" ColumnName="WorkflowId" />
+          <ScalarProperty Name="StartedById" ColumnName="StartedById" />
+          <ScalarProperty Name="MessageEntryDate" ColumnName="MessageEntryDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="ResponseById" ColumnName="ResponseById" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="TargetDirectoryId" ColumnName="TargetDirectoryId" />
+          <ScalarProperty Name="MessageTypeId" ColumnName="MessageTypeId" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="AppRequestId" ColumnName="AppRequestId" />
+          <ScalarProperty Name="AccessRequestId" ColumnName="AccessRequestId" />
+          <ScalarProperty Name="SendEmailBy" ColumnName="SendEmailBy" />
+          <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+          <ScalarProperty Name="PrimaryRecipientId" ColumnName="PrimaryRecipientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.MessageType)">
+        <MappingFragment StoreEntitySet="MessageTypes">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LDAPs">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.LDAP)">
+        <MappingFragment StoreEntitySet="LDAPs">
+          <ScalarProperty Name="row_id" ColumnName="row_id" />
+          <ScalarProperty Name="cn" ColumnName="cn" />
+          <ScalarProperty Name="employee_number" ColumnName="employee_number" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="user_status" ColumnName="user_status" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Room" ColumnName="Room" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="manager" ColumnName="manager" />
+          <ScalarProperty Name="ReportsToID" ColumnName="ReportsToID" />
+          <ScalarProperty Name="adspath" ColumnName="adspath" />
+          <ScalarProperty Name="ReportsTo" ColumnName="ReportsTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TerminalServices">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.TerminalService)">
+        <MappingFragment StoreEntitySet="TerminalServices">
+          <ScalarProperty Name="row_id" ColumnName="row_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_AHTDDirectory_EmpUserID">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_AHTDDirectory_EmpUserID)">
+        <MappingFragment StoreEntitySet="vw_AHTDDirectory_EmpUserID">
+          <ScalarProperty Name="DirectoryID" ColumnName="DirectoryID" />
+          <ScalarProperty Name="Record_Type" ColumnName="Record_Type" />
+          <ScalarProperty Name="Employee_Number" ColumnName="Employee_Number" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Name_Last" ColumnName="Name_Last" />
+          <ScalarProperty Name="Name_First" ColumnName="Name_First" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_AccessRequestsForActiveUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_AccessRequestsForActiveUsers)">
+        <MappingFragment StoreEntitySet="vw_AccessRequestsForActiveUsers">
+          <ScalarProperty Name="AccessRequestId" ColumnName="AccessRequestId" />
+          <ScalarProperty Name="SecurityInstanceId" ColumnName="SecurityInstanceId" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="OriginatorId" ColumnName="OriginatorId" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_GrantedAccess">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_GrantedAccess)">
+        <MappingFragment StoreEntitySet="vw_GrantedAccess">
+          <ScalarProperty Name="SecurityInstanceId" ColumnName="SecurityInstanceId" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="AppRequestId" ColumnName="AppRequestId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="BudgetId" ColumnName="BudgetId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_OutstandingMessages">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_OutstandingMessages)">
+        <MappingFragment StoreEntitySet="vw_OutstandingMessages">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="WorkflowId" ColumnName="WorkflowId" />
+          <ScalarProperty Name="StartedById" ColumnName="StartedById" />
+          <ScalarProperty Name="MessageEntryDate" ColumnName="MessageEntryDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="TargetDirectoryId" ColumnName="TargetDirectoryId" />
+          <ScalarProperty Name="MessageTypeId" ColumnName="MessageTypeId" />
+          <ScalarProperty Name="ResponseById" ColumnName="ResponseById" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="AppRequestId" ColumnName="AppRequestId" />
+          <ScalarProperty Name="AccessRequestId" ColumnName="AccessRequestId" />
+          <ScalarProperty Name="SendEmailBy" ColumnName="SendEmailBy" />
+          <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+          <ScalarProperty Name="PrimaryRecipientId" ColumnName="PrimaryRecipientId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PAHREmployees">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_PAHREmployees)">
+        <MappingFragment StoreEntitySet="vw_PAHREmployees">
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="PhoneArea" ColumnName="PhoneArea" />
+          <ScalarProperty Name="PhonePrefix" ColumnName="PhonePrefix" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneExt" ColumnName="PhoneExt" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="EngineerNumber" ColumnName="EngineerNumber" />
+          <ScalarProperty Name="CrewNumber" ColumnName="CrewNumber" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="DivisionDistrictIndicator" ColumnName="DivisionDistrictIndicator" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobItemNumber" ColumnName="JobItemNumber" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PAHREmployeesNotInAD">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_PAHREmployeesNotInAD)">
+        <MappingFragment StoreEntitySet="vw_PAHREmployeesNotInAD">
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="PhoneArea" ColumnName="PhoneArea" />
+          <ScalarProperty Name="PhonePrefix" ColumnName="PhonePrefix" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneExt" ColumnName="PhoneExt" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="EngineerNumber" ColumnName="EngineerNumber" />
+          <ScalarProperty Name="CrewNumber" ColumnName="CrewNumber" />
+          <ScalarProperty Name="DivisionDistrictIndicator" ColumnName="DivisionDistrictIndicator" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobItemNumber" ColumnName="JobItemNumber" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_SupervisorLookup">
+      <EntityTypeMapping TypeName="IsTypeOf(UserProvModel.vw_SupervisorLookup)">
+        <MappingFragment StoreEntitySet="vw_SupervisorLookup">
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="DivDist" ColumnName="DivDist" />
+          <ScalarProperty Name="Subset" ColumnName="Subset" />
+          <ScalarProperty Name="SecRECrew" ColumnName="SecRECrew" />
+          <ScalarProperty Name="SupervisoryCode" ColumnName="SupervisoryCode" />
+          <ScalarProperty Name="SupervisorEmployeeNo" ColumnName="SupervisorEmployeeNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PayrollWarrantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="T101_PAY_WARNT">
+    <Key>
+      <PropertyRef Name="FISCAL_YEAR" />
+      <PropertyRef Name="CHECK_NO" />
+      <PropertyRef Name="SEQUENCE_NO" />
+    </Key>
+    <Property Name="FISCAL_YEAR" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CHECK_NO" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AGENCY" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CHK_PRINT_DATE" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HEADER_AMT" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="PAYMENT_METHOD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="VOID_CHK_REASON" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PAYEE_NUMBER" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PAYEE_NAME" Type="String" MaxLength="35" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SAP_CLRING_DOC_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="REISSUE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PREFIX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="REFDOC_FISCAL_YR" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="VOUCH_NO" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PAGE_NO" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="LINE_NO" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="DETAIL_TYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SEQUENCE_NO" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="POSTING_DATE" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DETAIL_AMT" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="DOC_TYPE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ORDER_NUMBER" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WBS_ELEMENT" Type="String" MaxLength="22" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COST_CENTER" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="GL_ACCOUNT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY_CODE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SAP_INVOICE_DOC_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PayrollWarrantEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T101_PAY_WARNT" EntityType="Self.T101_PAY_WARNT" />
+  </EntityContainer>
+</Schema>

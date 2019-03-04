@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AHTD.Security.Web</name>
+    </assembly>
+    <members>
+        <member name="T:AHTD.Security.Web.CustomRequestValidator">
+            <summary>
+            This CustomRequestValidator validates the wresult parameter of the
+            WS-Federation passive protocol by checking for a SignInResponse message
+            in the form post. The SignInResponse message contents are verified later by
+            the WSFederationPassiveAuthenticationModule or the WIF signin controls.
+            </summary>
+            <remarks>
+            Add the following line to system.web in your config file to use this class:
+            <code>
+            &lt;httpRuntime requestValidationType=&quot;AHTD.Security.Web.CustomRequestValidator&quot;/&gt;
+            </code>
+            </remarks>
+        </member>
+        <member name="M:AHTD.Security.Web.CustomRequestValidator.IsValidRequestString(System.Web.HttpContext,System.String,System.Web.Util.RequestValidationSource,System.String,System.Int32@)">
+            <summary>
+            Validates a string that contains HTTP request data.
+            </summary>
+            <param name="context">The context of the current request.</param>
+            <param name="value">The HTTP request data to validate.</param>
+            <param name="requestValidationSource">An enumeration that represents the source of request data that is being validated. The following are possible values for the enumeration:QueryStringForm CookiesFilesRawUrlPathPathInfoHeaders</param>
+            <param name="collectionKey">The key in the request collection of the item to validate. This parameter is optional. This parameter is used if the data to validate is obtained from a collection. If the data to validate is not from a collection, <paramref name="collectionKey"/> can be null.</param>
+            <param name="validationFailureIndex">When this method returns, indicates the zero-based starting point of the problematic or invalid text in the request collection. This parameter is passed uninitialized.</param>
+            <returns>
+            true if the string to be validated is valid; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:AHTD.Security.Web.UserInfoBase">
+            <summary>
+            A base class for info related to a user's claims data.
+            </summary>
+            <remarks>
+            Inherit from this class in your web app and extend with values that are
+            relavent, such as perhaps employee number or role.
+            </remarks>
+        </member>
+        <member name="M:AHTD.Security.Web.UserInfoBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AHTD.Security.Web.UserInfoBase"/> class.
+            </summary>
+        </member>
+        <member name="M:AHTD.Security.Web.UserInfoBase.GetSpecificClaimValue(System.String)">
+            <summary>
+            Gets a value for the specific claim.
+            </summary>
+            <param name="claimType">Type of the claim.</param>
+            <returns></returns>
+        </member>
+        <member name="P:AHTD.Security.Web.UserInfoBase.WindowsAccountName">
+            <summary>
+            Gets the current user's Windows account name.
+            </summary>
+        </member>
+        <member name="T:AHTD.Security.Common.ClientClaim">
+            <summary>
+            Represents claim data usable by an app client.
+            </summary>
+        </member>
+        <member name="M:AHTD.Security.Common.ClientClaim.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AHTD.Security.Common.ClientClaim"/> class.
+            </summary>
+        </member>
+        <member name="M:AHTD.Security.Common.ClientClaim.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AHTD.Security.Common.ClientClaim"/> class.
+            </summary>
+            <param name="claimType">Type of the claim.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AHTD.Security.Common.ClientClaim.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AHTD.Security.Common.ClientClaim"/> class.
+            </summary>
+            <param name="claimType">Type of the claim.</param>
+            <param name="value">The value.</param>
+            <param name="valueType">Type of the value.</param>
+        </member>
+        <member name="P:AHTD.Security.Common.ClientClaim.ClaimType">
+            <summary>
+            Gets or sets the type of the claim.
+            </summary>
+        </member>
+        <member name="P:AHTD.Security.Common.ClientClaim.Value">
+            <summary>
+            Gets or sets the value of the claim.
+            </summary>
+        </member>
+        <member name="P:AHTD.Security.Common.ClientClaim.ValueType">
+            <summary>
+            Gets or sets the type of the value.
+            </summary>
+        </member>
+        <member name="T:AHTD.Security.Common.AHTDClaimTypes">
+            <summary>
+            Provides constants for AHTD custom claim types.
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.DirectoryID">
+            <summary>
+            Directory ID
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.EmpID">
+            <summary>
+            Employee ID
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.Budget">
+            <summary>
+            Budget #
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.Location">
+            <summary>
+            Location, such as district or division
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.BudgetLocation">
+            <summary>
+            Budget # under a location
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.RoleBudgetLocation">
+            <summary>
+            Budget # under a location for a given role
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHTDClaimTypes.SupervisoryCode">
+            <summary>
+            Supervisory Code
+            <example>A, B, C, D</example>
+            </summary>
+        </member>
+        <member name="M:AHTD.Security.Common.AHTDClaimTypes.GetBudgetLocation(System.String,System.String)">
+            <summary>
+            Combines a budget and location to form a standardized value to
+            compare against a value for claims of type
+            <see cref="P:BudgetLocation"/>.
+            </summary>
+            <param name="budget">A budget number.</param>
+            <param name="location">A location.</param>
+            <returns>A <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:AHTD.Security.Common.AHTDClaimTypes.GetRoleBudgetLocation(System.String,System.String,System.String)">
+            <summary>
+            Combines a role, budget, and location to form a standardized value
+            to compare against a value for claims of type
+            <see cref="P:RoleBudgetLocation"/>.
+            </summary>
+            <param name="roleName">A role name.</param>
+            <param name="budget">A budget number.</param>
+            <param name="location">A location.</param>
+            <returns>A <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:AHTD.Security.Common.AHPClaimTypes">
+            <summary>
+            Provides constants for AHP custom claim types.
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHPClaimTypes.Rank">
+            <summary>
+            AHP Rank
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHPClaimTypes.RankAbbrev">
+            <summary>
+            AHP Rank abbreviation
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHPClaimTypes.District">
+            <summary>
+            AHP District
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.AHPClaimTypes.Unit">
+            <summary>
+            AHP Unit
+            </summary>
+        </member>
+        <member name="T:AHTD.Security.Common.StandardClaimTypes">
+            <summary>
+            Provides constants for industry standard claim types.
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Actor">
+            <summary>
+            Actor
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Anonymous">
+            <summary>
+            Anonymous
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Authentication">
+            <summary>
+            Authentication
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.AuthenticationInstant">
+            <summary>
+            AuthenticationInstant
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.AuthenticationMethod">
+            <summary>
+            AuthenticationMethod
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.AuthorizationDecision">
+            <summary>
+            AuthorizationDecision
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.ClaimType2005Namespace">
+            <summary>
+            ClaimType2005Namespace
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.ClaimType2009Namespace">
+            <summary>
+            ClaimType2009Namespace
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.ClaimTypeNamespace">
+            <summary>
+            ClaimTypeNamespace
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.CookiePath">
+            <summary>
+            CookiePath
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.DateOfBirth">
+            <summary>
+            DateOfBirth
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.DenyOnlyPrimaryGroupSid">
+            <summary>
+            DenyOnlyPrimaryGroupSid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.DenyOnlyPrimarySid">
+            <summary>
+            DenyOnlyPrimarySid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.DenyOnlySid">
+            <summary>
+            DenyOnlySid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Dns">
+            <summary>
+            Dns
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Dsa">
+            <summary>
+            Dsa
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Expiration">
+            <summary>
+            Expiration
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Expired">
+            <summary>
+            Expired
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Gender">
+            <summary>
+            Gender
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.GivenName">
+            <summary>
+            GivenName
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.GroupSid">
+            <summary>
+            GroupSid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Hash">
+            <summary>
+            Hash
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.HomePhone">
+            <summary>
+            HomePhone
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.IsPersistent">
+            <summary>
+            IsPersistent
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Locality">
+            <summary>
+            Locality
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.MobilePhone">
+            <summary>
+            MobilePhone
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.NameIdentifier">
+            <summary>
+            NameIdentifier
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.OtherPhone">
+            <summary>
+            OtherPhone
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.PostalCode">
+            <summary>
+            PostalCode
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.PPID">
+            <summary>
+            PPID
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.PrimaryGroupSid">
+            <summary>
+            PrimaryGroupSid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.PrimarySid">
+            <summary>
+            PrimarySid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Role">
+            <summary>
+            Role
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Rsa">
+            <summary>
+            Rsa
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.SerialNumber">
+            <summary>
+            SerialNumber
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Sid">
+            <summary>
+            Sid
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Spn">
+            <summary>
+            Spn
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.StateOrProvince">
+            <summary>
+            StateOrProvince
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.StreetAddress">
+            <summary>
+            StreetAddress
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Surname">
+            <summary>
+            Surname
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.System">
+            <summary>
+            System
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Thumbprint">
+            <summary>
+            Thumbprint
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Upn">
+            <summary>
+            Upn
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Uri">
+            <summary>
+            Uri
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.UserData">
+            <summary>
+            UserData
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Version">
+            <summary>
+            Version
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.Webpage">
+            <summary>
+            Webpage
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.WindowsAccountName">
+            <summary>
+            WindowsAccountName
+            </summary>
+        </member>
+        <member name="F:AHTD.Security.Common.StandardClaimTypes.X500DistinguishedName">
+            <summary>
+            X500DistinguishedName
+            </summary>
+        </member>
+    </members>
+</doc>

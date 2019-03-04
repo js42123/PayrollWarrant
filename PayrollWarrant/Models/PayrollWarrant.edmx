@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PayrollWarrantModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PayrollWarrantModelStoreContainer">
+    <EntitySet Name="T101_PAY_WARNT" EntityType="PayrollWarrantModel.Store.T101_PAY_WARNT" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="T101_PAY_WARNT">
+    <Key>
+      <PropertyRef Name="FISCAL_YEAR" />
+      <PropertyRef Name="CHECK_NO" />
+      <PropertyRef Name="SEQUENCE_NO" />
+    </Key>
+    <Property Name="FISCAL_YEAR" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CHECK_NO" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="AGENCY" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="CHK_PRINT_DATE" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="HEADER_AMT" Type="decimal" Nullable="false" Precision="16" Scale="2" />
+    <Property Name="PAYMENT_METHOD" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="VOID_CHK_REASON" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="PAYEE_NUMBER" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="PAYEE_NAME" Type="char" Nullable="false" MaxLength="35" />
+    <Property Name="SAP_CLRING_DOC_NO" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="REISSUE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="PREFIX" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="REFDOC_FISCAL_YR" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="VOUCH_NO" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="PAGE_NO" Type="decimal" Nullable="false" Precision="3" Scale="0" />
+    <Property Name="LINE_NO" Type="decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="DETAIL_TYPE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="SEQUENCE_NO" Type="decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="POSTING_DATE" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="DETAIL_AMT" Type="decimal" Nullable="false" Precision="16" Scale="2" />
+    <Property Name="DOC_TYPE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="ORDER_NUMBER" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="WBS_ELEMENT" Type="char" Nullable="false" MaxLength="22" />
+    <Property Name="COST_CENTER" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="GL_ACCOUNT" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="COMPANY_CODE" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="SAP_INVOICE_DOC_NO" Type="char" Nullable="false" MaxLength="10" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PayrollWarrantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T101_PAY_WARNT">
+          <Key>
+            <PropertyRef Name="FISCAL_YEAR" />
+            <PropertyRef Name="CHECK_NO" />
+            <PropertyRef Name="SEQUENCE_NO" />
+          </Key>
+          <Property Name="FISCAL_YEAR" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CHECK_NO" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AGENCY" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CHK_PRINT_DATE" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HEADER_AMT" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+          <Property Name="PAYMENT_METHOD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="VOID_CHK_REASON" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAYEE_NUMBER" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAYEE_NAME" Type="String" MaxLength="35" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SAP_CLRING_DOC_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="REISSUE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PREFIX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="REFDOC_FISCAL_YR" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="VOUCH_NO" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PAGE_NO" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="LINE_NO" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="DETAIL_TYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SEQUENCE_NO" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="POSTING_DATE" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DETAIL_AMT" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+          <Property Name="DOC_TYPE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ORDER_NUMBER" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="WBS_ELEMENT" Type="String" MaxLength="22" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="COST_CENTER" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GL_ACCOUNT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="COMPANY_CODE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SAP_INVOICE_DOC_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PayrollWarrantEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T101_PAY_WARNT" EntityType="Self.T101_PAY_WARNT" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PayrollWarrantModelStoreContainer" CdmEntityContainer="PayrollWarrantEntities">
+    <EntitySetMapping Name="T101_PAY_WARNT">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollWarrantModel.T101_PAY_WARNT)">
+        <MappingFragment StoreEntitySet="T101_PAY_WARNT">
+          <ScalarProperty Name="FISCAL_YEAR" ColumnName="FISCAL_YEAR" />
+          <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
+          <ScalarProperty Name="SEQUENCE_NO" ColumnName="SEQUENCE_NO" />
+          <ScalarProperty Name="AGENCY" ColumnName="AGENCY" />
+          <ScalarProperty Name="CHK_PRINT_DATE" ColumnName="CHK_PRINT_DATE" />
+          <ScalarProperty Name="HEADER_AMT" ColumnName="HEADER_AMT" />
+          <ScalarProperty Name="PAYMENT_METHOD" ColumnName="PAYMENT_METHOD" />
+          <ScalarProperty Name="VOID_CHK_REASON" ColumnName="VOID_CHK_REASON" />
+          <ScalarProperty Name="PAYEE_NUMBER" ColumnName="PAYEE_NUMBER" />
+          <ScalarProperty Name="PAYEE_NAME" ColumnName="PAYEE_NAME" />
+          <ScalarProperty Name="SAP_CLRING_DOC_NO" ColumnName="SAP_CLRING_DOC_NO" />
+          <ScalarProperty Name="REISSUE" ColumnName="REISSUE" />
+          <ScalarProperty Name="PREFIX" ColumnName="PREFIX" />
+          <ScalarProperty Name="REFDOC_FISCAL_YR" ColumnName="REFDOC_FISCAL_YR" />
+          <ScalarProperty Name="VOUCH_NO" ColumnName="VOUCH_NO" />
+          <ScalarProperty Name="PAGE_NO" ColumnName="PAGE_NO" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="DETAIL_TYPE" ColumnName="DETAIL_TYPE" />
+          <ScalarProperty Name="POSTING_DATE" ColumnName="POSTING_DATE" />
+          <ScalarProperty Name="DETAIL_AMT" ColumnName="DETAIL_AMT" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="ORDER_NUMBER" ColumnName="ORDER_NUMBER" />
+          <ScalarProperty Name="WBS_ELEMENT" ColumnName="WBS_ELEMENT" />
+          <ScalarProperty Name="COST_CENTER" ColumnName="COST_CENTER" />
+          <ScalarProperty Name="GL_ACCOUNT" ColumnName="GL_ACCOUNT" />
+          <ScalarProperty Name="COMPANY_CODE" ColumnName="COMPANY_CODE" />
+          <ScalarProperty Name="SAP_INVOICE_DOC_NO" ColumnName="SAP_INVOICE_DOC_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
