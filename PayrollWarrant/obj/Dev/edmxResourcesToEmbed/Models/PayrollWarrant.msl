@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PayrollWarrantModelStoreContainer" CdmEntityContainer="PayrollWarrantEntities">
+    <EntitySetMapping Name="T101_PAY_WARNT">
+      <EntityTypeMapping TypeName="IsTypeOf(PayrollWarrantModel.T101_PAY_WARNT)">
+        <MappingFragment StoreEntitySet="T101_PAY_WARNT">
+          <ScalarProperty Name="FISCAL_YEAR" ColumnName="FISCAL_YEAR" />
+          <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
+          <ScalarProperty Name="SEQUENCE_NO" ColumnName="SEQUENCE_NO" />
+          <ScalarProperty Name="AGENCY" ColumnName="AGENCY" />
+          <ScalarProperty Name="CHK_PRINT_DATE" ColumnName="CHK_PRINT_DATE" />
+          <ScalarProperty Name="HEADER_AMT" ColumnName="HEADER_AMT" />
+          <ScalarProperty Name="PAYMENT_METHOD" ColumnName="PAYMENT_METHOD" />
+          <ScalarProperty Name="VOID_CHK_REASON" ColumnName="VOID_CHK_REASON" />
+          <ScalarProperty Name="PAYEE_NUMBER" ColumnName="PAYEE_NUMBER" />
+          <ScalarProperty Name="PAYEE_NAME" ColumnName="PAYEE_NAME" />
+          <ScalarProperty Name="SAP_CLRING_DOC_NO" ColumnName="SAP_CLRING_DOC_NO" />
+          <ScalarProperty Name="REISSUE" ColumnName="REISSUE" />
+          <ScalarProperty Name="PREFIX" ColumnName="PREFIX" />
+          <ScalarProperty Name="REFDOC_FISCAL_YR" ColumnName="REFDOC_FISCAL_YR" />
+          <ScalarProperty Name="VOUCH_NO" ColumnName="VOUCH_NO" />
+          <ScalarProperty Name="PAGE_NO" ColumnName="PAGE_NO" />
+          <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+          <ScalarProperty Name="DETAIL_TYPE" ColumnName="DETAIL_TYPE" />
+          <ScalarProperty Name="POSTING_DATE" ColumnName="POSTING_DATE" />
+          <ScalarProperty Name="DETAIL_AMT" ColumnName="DETAIL_AMT" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="ORDER_NUMBER" ColumnName="ORDER_NUMBER" />
+          <ScalarProperty Name="WBS_ELEMENT" ColumnName="WBS_ELEMENT" />
+          <ScalarProperty Name="COST_CENTER" ColumnName="COST_CENTER" />
+          <ScalarProperty Name="GL_ACCOUNT" ColumnName="GL_ACCOUNT" />
+          <ScalarProperty Name="COMPANY_CODE" ColumnName="COMPANY_CODE" />
+          <ScalarProperty Name="SAP_INVOICE_DOC_NO" ColumnName="SAP_INVOICE_DOC_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

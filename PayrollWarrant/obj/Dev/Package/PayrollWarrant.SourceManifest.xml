@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

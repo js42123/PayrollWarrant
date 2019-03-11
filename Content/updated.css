@@ -84,10 +84,10 @@ h6,
 }
 
 p {
- font-size: 1rem;
+    font-size: 1rem;
     margin: 0 0 0px;
     line-height: 1rem;
-    
+    font-family: 'Montserrat', sans-serif;
 }
 
 b {

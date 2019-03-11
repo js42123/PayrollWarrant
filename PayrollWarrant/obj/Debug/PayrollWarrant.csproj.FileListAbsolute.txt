@@ -156,3 +156,7 @@ D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWar
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Debug\PayrollWarrant.csproj.CopyComplete
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Debug\PayrollWarrant.dll
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Debug\PayrollWarrant.pdb
+D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\AHTD.Security.STSWeb.dll
+D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\Microsoft.IdentityModel.dll
+D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\AHTD.Security.STSWeb.pdb
+D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\AHTD.Security.STSWeb.xml
