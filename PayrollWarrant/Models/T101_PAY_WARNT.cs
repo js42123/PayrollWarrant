@@ -25,8 +25,11 @@ namespace PayrollWarrant.Models
         [Display(Name = "Agency")]
         public string AGENCY { get; set; }
         [Display(Name = "Check Payment Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public string CHK_PRINT_DATE { get; set; }
         [Display(Name = "Header Amount")]
+        [DataType(DataType.Currency)]
         public decimal HEADER_AMT { get; set; }
         [Display(Name = "Payment Method")]
         public string PAYMENT_METHOD { get; set; }
@@ -59,6 +62,7 @@ namespace PayrollWarrant.Models
         [Display(Name = "Posting Date")]
         public string POSTING_DATE { get; set; }
         [Display(Name = "Detail Amount")]
+        [DataType(DataType.Currency)]
         public decimal DETAIL_AMT { get; set; }
         [Display(Name = "Document Type")]
         public string DOC_TYPE { get; set; }
