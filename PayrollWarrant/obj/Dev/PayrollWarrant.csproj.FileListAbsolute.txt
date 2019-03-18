@@ -76,8 +76,8 @@ D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWar
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\System.Web.WebPages.Razor.xml
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\System.Web.Optimization.xml
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\bin\Antlr3.Runtime.pdb
-D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\PayrollWarrant.csprojAssemblyReference.cache
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\PayrollWarrant.csproj.CoreCompileInputs.cache
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\PayrollWarrant.csproj.CopyComplete
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\PayrollWarrant.dll
 D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\PayrollWarrant.pdb
+D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\obj\Dev\PayrollWarrant.csprojAssemblyReference.cache
