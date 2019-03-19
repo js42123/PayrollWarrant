@@ -13,10 +13,10 @@ namespace PayrollWarrant.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PayrollWarrantEntities : DbContext
+    public partial class PayrollWarrantEntities1 : DbContext
     {
-        public PayrollWarrantEntities()
-            : base("name=PayrollWarrantEntities")
+        public PayrollWarrantEntities1()
+            : base("name=PayrollWarrantEntities1")
         {
         }
     

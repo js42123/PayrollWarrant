@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b6bafdee343744328569d81756a0c28e" Name="Diagram1">
+      <Diagram DiagramId="e7615e90fae447a2bc95c735cf5ed571" Name="Diagram1" ZoomLevel="95">
         <EntityTypeShape EntityType="PayrollWarrantModel.T101_PAY_WARNT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

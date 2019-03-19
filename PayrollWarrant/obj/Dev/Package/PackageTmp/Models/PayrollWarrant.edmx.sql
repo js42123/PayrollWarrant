@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/23/2019 08:14:42
--- Generated from EDMX file: C:\Users\js42123\source\repos\PayrollWarrant\PayrollWarrant\Models\PayrollWarrant.edmx
+-- Date Created: 03/19/2019 13:12:33
+-- Generated from EDMX file: D:\tfs_applications\AASIS Payroll Warrant Search\PayrollWarrantSearch\PayrollWarrant\Models\PayrollWarrant.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;

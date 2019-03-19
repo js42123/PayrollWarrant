@@ -10,7 +10,7 @@ namespace PayrollWarrant.Controllers
 {
     public class WarrantController : Controller
     {
-        private PayrollWarrantEntities db = new PayrollWarrantEntities();
+        private PayrollWarrantEntities1 db = new PayrollWarrantEntities1();
         private int page;
 
         // GET: Warrant
@@ -42,7 +42,7 @@ namespace PayrollWarrant.Controllers
                         .ToList<Models.T101_PAY_WARNT>();
                     model.SearchResults = pagingList;
                 }
-                using (var db = new Models.PayrollWarrantEntities())
+                using (var db = new Models.PayrollWarrantEntities1())
                 {
                     PopulateViewBagLists(db);
                     return View(model);
@@ -54,7 +54,7 @@ namespace PayrollWarrant.Controllers
         [HttpPost]
         public ActionResult Index(WarrantSearch data)
         {
-            using (var db = new PayrollWarrantEntities())
+            using (var db = new PayrollWarrantEntities1())
             {
                 var model = new WarrantSearch();
                 PopulateViewBagLists(db);
@@ -132,13 +132,13 @@ namespace PayrollWarrant.Controllers
 
         }
 
-        private void PopulateViewBagLists(PayrollWarrantEntities db)
+        private void PopulateViewBagLists(PayrollWarrantEntities1 db)
         {
             var payTypes = new Dictionary<string, string>() { { " ", "" }, { "B", "Career Enhancement Pay" }, { "D", "Biweekly Payroll" }, { "S", "Supplemental Pay" }, { "T", "Comp Bank Payout" }, { "R", "Reissue" } };
             ViewBag.DETAIL_TYPE = payTypes.Select(c => new SelectListItem { Text = c.Value, Value = c.Key });
         }
 
-        private IQueryable<T101_PAY_WARNT> GetSearchResults(WarrantSearch data, PayrollWarrantEntities db, PagingListType pagingListType)
+        private IQueryable<T101_PAY_WARNT> GetSearchResults(WarrantSearch data, PayrollWarrantEntities1 db, PagingListType pagingListType)
         {
             IQueryable<Models.T101_PAY_WARNT> query = db.T101_PAY_WARNT;
 

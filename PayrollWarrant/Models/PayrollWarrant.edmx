@@ -80,7 +80,7 @@
           <Property Name="COMPANY_CODE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="SAP_INVOICE_DOC_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="PayrollWarrantEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PayrollWarrantEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="T101_PAY_WARNT" EntityType="Self.T101_PAY_WARNT" />
         </EntityContainer>
       </Schema>
@@ -88,7 +88,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PayrollWarrantModelStoreContainer" CdmEntityContainer="PayrollWarrantEntities">
+  <EntityContainerMapping StorageEntityContainer="PayrollWarrantModelStoreContainer" CdmEntityContainer="PayrollWarrantEntities1">
     <EntitySetMapping Name="T101_PAY_WARNT">
       <EntityTypeMapping TypeName="IsTypeOf(PayrollWarrantModel.T101_PAY_WARNT)">
         <MappingFragment StoreEntitySet="T101_PAY_WARNT">

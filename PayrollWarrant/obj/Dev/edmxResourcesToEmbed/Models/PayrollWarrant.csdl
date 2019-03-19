@@ -34,7 +34,7 @@
     <Property Name="COMPANY_CODE" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="SAP_INVOICE_DOC_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="PayrollWarrantEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="PayrollWarrantEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="T101_PAY_WARNT" EntityType="Self.T101_PAY_WARNT" />
   </EntityContainer>
 </Schema>

@@ -160,6 +160,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authorization.cs" />
+    <Compile Include="ClaimTypes.cs" />
+    <Compile Include="ClientClaim.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagingListType.cs" />
     <Compile Include="Controllers\SharedFunctions.cs" />
@@ -204,26 +206,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\PayrollWarrant.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PayrollWarrant.Context.cs</LastGenOutput>
-      <DependentUpon>PayrollWarrant.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\PayrollWarrant.edmx.sql" />
-    <Content Include="Models\PayrollWarrant.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PayrollWarrant.edmx</DependentUpon>
-      <LastGenOutput>PayrollWarrant.cs</LastGenOutput>
-    </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\PayrollWarrant.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PayrollWarrant.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PayrollWarrant.edmx.diagram">
-      <DependentUpon>PayrollWarrant.edmx</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -233,7 +217,25 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="DefaultSigningCertificate.pfx" />
     <Content Include="DefaultEncryptingCertificate.pfx" />
+    <EntityDeploy Include="Models\PayrollWarrant.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PayrollWarrant.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PayrollWarrant.edmx.diagram">
+      <DependentUpon>PayrollWarrant.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Models\PayrollWarrant.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PayrollWarrant.edmx</DependentUpon>
+      <LastGenOutput>PayrollWarrant.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PayrollWarrant.edmx.sql" />
+    <Content Include="Models\PayrollWarrant.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PayrollWarrant.edmx</DependentUpon>
+      <LastGenOutput>PayrollWarrant.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

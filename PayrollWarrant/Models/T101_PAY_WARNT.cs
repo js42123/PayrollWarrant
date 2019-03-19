@@ -12,7 +12,8 @@ namespace PayrollWarrant.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
+    
     public partial class T101_PAY_WARNT
     {
         public List<T101_PAY_WARNT> SearchResults { get; set; }
@@ -25,8 +26,7 @@ namespace PayrollWarrant.Models
         [Display(Name = "Agency")]
         public string AGENCY { get; set; }
         [Display(Name = "Check Payment Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public string CHK_PRINT_DATE { get; set; }
         [Display(Name = "Header Amount")]
         [DataType(DataType.Currency)]
@@ -60,6 +60,7 @@ namespace PayrollWarrant.Models
         public decimal SEQUENCE_NO { get; set; }
 
         [Display(Name = "Posting Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public string POSTING_DATE { get; set; }
         [Display(Name = "Detail Amount")]
         [DataType(DataType.Currency)]
@@ -80,10 +81,8 @@ namespace PayrollWarrant.Models
         public string SAP_INVOICE_DOC_NO { get; set; }
         public int page { get; set; }
         public string Search { get; set; }
-        public string model { get; set; }
+
 
         public string RefDocNo { get { return string.Format("{0}{1}{2}{3}{4}{5}{6}", PREFIX, AGENCY, REFDOC_FISCAL_YR, VOUCH_NO, PAGE_NO, LINE_NO, DETAIL_TYPE); } }
-
     }
 }
-

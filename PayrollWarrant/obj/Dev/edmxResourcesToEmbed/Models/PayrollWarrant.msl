@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PayrollWarrantModelStoreContainer" CdmEntityContainer="PayrollWarrantEntities">
+  <EntityContainerMapping StorageEntityContainer="PayrollWarrantModelStoreContainer" CdmEntityContainer="PayrollWarrantEntities1">
     <EntitySetMapping Name="T101_PAY_WARNT">
       <EntityTypeMapping TypeName="IsTypeOf(PayrollWarrantModel.T101_PAY_WARNT)">
         <MappingFragment StoreEntitySet="T101_PAY_WARNT">
