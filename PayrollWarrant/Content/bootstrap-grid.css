@@ -815,7 +815,7 @@ html {
     flex-basis: 0;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    max-width: max-content;
+   
   }
   .col-xl-auto {
     -ms-flex: 0 0 auto;

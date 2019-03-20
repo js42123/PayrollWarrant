@@ -927,7 +927,7 @@ span.message {
 
 /*Paging Styles*/
 div.pager {
-    width: max-content;
+    width:auto;
     text-align: center;
 }
 

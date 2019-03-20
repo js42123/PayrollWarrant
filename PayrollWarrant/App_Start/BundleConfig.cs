@@ -23,7 +23,7 @@ namespace PayrollWarrant
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*", new CssRewriteUrlTransform())); 
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css", new CssRewriteUrlTransform())); 
+            bundles.Add(new StyleBundle("~/Content/Site").Include("~/Content/site.css", new CssRewriteUrlTransform())); 
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

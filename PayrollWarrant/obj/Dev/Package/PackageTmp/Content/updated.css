@@ -8,6 +8,14 @@
 /* FORM LAYOUT ELEMENTS*/
 
 
+.container {
+    width: 1800px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 a.classname {
     background-color: white;
     text-decoration-color: darkblue;
@@ -26,7 +34,7 @@ p {
 }
 
 .container {
-    width: auto;
+    width: 1800px;
 }
 
 .jumbotron-fluid {

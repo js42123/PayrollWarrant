@@ -10,7 +10,7 @@
 *@
 
 
-<div class="pager" style="max-width">
+<div class="pager">
     @foreach (string[] stArray in Model)
     {
         string current = stArray[1].Equals(ViewBag.CurrentPage + "") ? "current-page" : "";
