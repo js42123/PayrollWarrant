@@ -9,10 +9,10 @@ namespace PayrollWarrant
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                          "~/Scripts/jquery-{version}.js", new CssRewriteUrlTransform())); 
+                          "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js", new CssRewriteUrlTransform())); 
+                        "~/Scripts/jquery-ui-{version}.js")); 
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -21,9 +21,9 @@ namespace PayrollWarrant
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*", new CssRewriteUrlTransform())); 
+                        "~/Scripts/modernizr-*")); 
 
-            bundles.Add(new StyleBundle("~/Content/Site").Include("~/Content/site.css", new CssRewriteUrlTransform())); 
+            bundles.Add(new StyleBundle("~/Content/Site").Include("~/Content/site.css")); 
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -40,9 +40,9 @@ namespace PayrollWarrant
                         "~/Content/themes/base/jquery.ui.theme.css",
                          "~/Content/themes/base/jquery.ui.datepicker.css"));
 
-            bundles.Add(new StyleBundle("~/styles/bootstrap").Include("~/Content/bootstrap.css", new CssRewriteUrlTransform())); 
-            bundles.Add(new StyleBundle("~/styles/updated").Include("~/Content/updated.css", new CssRewriteUrlTransform())); 
-            bundles.Add(new StyleBundle("~/styles/Site").Include("~/Content/site.css", new CssRewriteUrlTransform())); 
+            bundles.Add(new StyleBundle("~/styles/bootstrap").Include("~/Content/bootstrap.css")); 
+            bundles.Add(new StyleBundle("~/styles/updated").Include("~/Content/updated.css")); 
+            bundles.Add(new StyleBundle("~/styles/Site").Include("~/Content/site.css")); 
             bundles.Add(new ScriptBundle("~/scripts/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/bootstrap.bundle.js"));
