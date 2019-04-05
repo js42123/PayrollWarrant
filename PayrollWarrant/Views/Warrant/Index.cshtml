@@ -18,30 +18,33 @@
                 </div>
 
                 <div class="card-body">
-                    <p style="font-family: font-family: 'Montserrat', sans-serif;">
-                        @Html.LabelFor(model => model.PAYEE_NAME)
-                        @Html.TextBoxFor(model => model.PAYEE_NAME)
-                        <br />
-                        <br />
+                 <p style="font-family: font-family: 'Montserrat', sans-serif;">
+    <strong>@Html.LabelFor(model => model.PAYEE_NAME)</strong>
+    @Html.TextBoxFor(model => model.PAYEE_NAME)<br />
+    @Html.ValidationMessage("PAYEE_NAME", "", new { @class = "text-danger" })
+    <br />
 
-                        @Html.LabelFor(model => model.FISCAL_YEAR)
-                        @Html.TextBoxFor(model => model.FISCAL_YEAR)
-                        @Html.ValidationMessage("FISCAL_YEAR", "", new { @class = "text-danger" })<br />
-                        <br />
 
-                        @Html.LabelFor(model => model.CHECK_NO)
-                        @Html.TextBoxFor(model => model.CHECK_NO)<br />
-                        <br />
+   <strong> @Html.LabelFor(model => model.FISCAL_YEAR)</strong>
+    @Html.DropDownListFor(model => model.FISCAL_YEAR, new SelectList(ViewBag.FISCAL_YEAR, "Value", "Text"), "Select Fiscal Year")<br />
+    @Html.ValidationMessage("FISCAL_YEAR", "", new { @class = "text-danger" })
 
-                        @Html.LabelFor(model => model.DETAIL_TYPE)
-                        @Html.DropDownListFor(model => model.DETAIL_TYPE, new SelectList(ViewBag.DETAIL_TYPE, "Value", "Text"))
-                        @Html.ValidationMessage("DETAIL_TYPE", "", new { @class = "text-danger" })<br />
-                    </p>
+    <br />
+
+   <strong> @Html.LabelFor(model => model.CHECK_NO)</strong>
+    @Html.TextBoxFor(model => model.CHECK_NO)<br />
+    <br />
+
+   <strong>@Html.LabelFor(model => model.DETAIL_TYPE)</strong>
+    @Html.DropDownListFor(model => model.DETAIL_TYPE, new SelectList(ViewBag.DETAIL_TYPE, "Value", "Text"))<br />
+    @Html.ValidationMessage("DETAIL_TYPE", "", new { @class = "text-danger" })<br />
+</p>
                 </div>
                 <div class="button">
 
-                    <input type="reset" value="Reset Form" />
+                    @*<input id="Reset" type="reset" value="Reset Form" name="Reset" />*@
                     <input id="Search" type="submit" value="Search" name="Search" />
+                  
 
                 </div>
             </div>
@@ -61,7 +64,7 @@
                             <strong>NOTE:</strong>
                             Be Specific in your search.
                             The system will only search for what has been filled out. <strong>
-                                Fiscal Year
+                                Fiscal Year, Payee Name
                                 and Pay Type are required fields.
                             </strong>
                         </p>

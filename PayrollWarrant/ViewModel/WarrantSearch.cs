@@ -28,6 +28,7 @@ namespace PayrollWarrant.ViewModel
         public string VOID_CHK_REASON { get; set; }
         [Display(Name = "Payee Number")]
         public string PAYEE_NUMBER { get; set; }
+        [Required]
         [Display(Name = "Payee Name")]
         public string PAYEE_NAME { get; set; }
         [Display(Name = "SAP Clearing No")]

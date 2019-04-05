@@ -44,6 +44,7 @@ namespace PayrollWarrant.Controllers
                 }
                 using (var db = new Models.PayrollWarrantEntities1())
                 {
+                    
                     PopulateViewBagLists(db);
                     return View(model);
                 }
@@ -134,8 +135,13 @@ namespace PayrollWarrant.Controllers
 
         private void PopulateViewBagLists(PayrollWarrantEntities1 db)
         {
+            //ViewBag.FISCAL_YEAR = db.T101_PAY_WARNT.ToList().Select(c => new SelectListItem { Value = c.FISCAL_YEAR, Text = c.FISCAL_YEAR }).ToList();
+            var fiscalYear = db.T101_PAY_WARNT.Select(x => x.FISCAL_YEAR).ToList();
+            ViewBag.FISCAL_YEAR = fiscalYear.Distinct().Select(m => new SelectListItem { Value = m, Text = m });
+          
             var payTypes = new Dictionary<string, string>() { { " ", "" }, { "B", "Career Enhancement Pay" }, { "D", "Biweekly Payroll" }, { "S", "Supplemental Pay" }, { "T", "Comp Bank Payout" }, { "R", "Reissue" } };
             ViewBag.DETAIL_TYPE = payTypes.Select(c => new SelectListItem { Text = c.Value, Value = c.Key });
+            
         }
 
         private IQueryable<T101_PAY_WARNT> GetSearchResults(WarrantSearch data, PayrollWarrantEntities1 db, PagingListType pagingListType)
