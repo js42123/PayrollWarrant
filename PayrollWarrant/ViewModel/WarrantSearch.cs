@@ -71,9 +71,16 @@ namespace PayrollWarrant.ViewModel
         public string SAP_INVOICE_DOC_NO { get; set; }
         public int page { get; set; }
         public string Search { get; set; }
+        public string searchType { get; set; }
 
 
         public string RefDocNo { get { return string.Format("{0}{1}{2}{3}{4}{5}{6}", PREFIX, AGENCY, REFDOC_FISCAL_YR, VOUCH_NO, PAGE_NO, LINE_NO, DETAIL_TYPE); } }
 
+    }
+
+    public enum searchBy
+    {
+        Contains,
+        BeginsWith
     }
 }

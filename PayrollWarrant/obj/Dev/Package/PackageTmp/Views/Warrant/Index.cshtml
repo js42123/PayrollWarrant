@@ -19,22 +19,31 @@
 
                 <div class="card-body">
                     <p style="font-family: font-family: 'Montserrat', sans-serif;">
-                        @Html.LabelFor(model => model.PAYEE_NAME)
-                        @Html.TextBoxFor(model => model.PAYEE_NAME)
+                        <strong>@Html.LabelFor(model => model.PAYEE_NAME)</strong>
+                        @Html.TextBoxFor(model => model.PAYEE_NAME)<br />
+                        @Html.ValidationMessage("PAYEE_NAME", "", new { @class = "text-danger" })
                         <br />
+                 
+                        <strong>@Html.LabelFor(model => model.searchType, "Payee Name" )</strong>
+                        Contains
+                        @Html.RadioButton("searchType","Contains",true)
+                        Begins With
+                        @Html.RadioButton("searchType", "Begins With")<br />
                         <br />
 
-                        @Html.LabelFor(model => model.FISCAL_YEAR)
-                        @Html.TextBoxFor(model => model.FISCAL_YEAR)
-                        @Html.ValidationMessage("FISCAL_YEAR", "", new { @class = "text-danger" })<br />
+
+                        <strong> @Html.LabelFor(model => model.FISCAL_YEAR)</strong>
+                        @Html.DropDownListFor(model => model.FISCAL_YEAR, new SelectList(ViewBag.FISCAL_YEAR, "Value", "Text"), "Select Fiscal Year")<br />
+
+
                         <br />
 
-                        @Html.LabelFor(model => model.CHECK_NO)
+                        <strong> @Html.LabelFor(model => model.CHECK_NO)</strong>
                         @Html.TextBoxFor(model => model.CHECK_NO)<br />
                         <br />
 
-                        @Html.LabelFor(model => model.DETAIL_TYPE)
-                        @Html.DropDownListFor(model => model.DETAIL_TYPE, new SelectList(ViewBag.DETAIL_TYPE, "Value", "Text"))
+                        <strong>@Html.LabelFor(model => model.DETAIL_TYPE)</strong>
+                        @Html.DropDownListFor(model => model.DETAIL_TYPE, new SelectList(ViewBag.DETAIL_TYPE, "Value", "Text"))<br />
                         @Html.ValidationMessage("DETAIL_TYPE", "", new { @class = "text-danger" })<br />
                     </p>
                 </div>
@@ -42,6 +51,7 @@
 
                     <input type="reset" value="Reset Form" />
                     <input id="Search" type="submit" value="Search" name="Search" />
+
 
                 </div>
             </div>
@@ -61,7 +71,7 @@
                             <strong>NOTE:</strong>
                             Be Specific in your search.
                             The system will only search for what has been filled out. <strong>
-                                Fiscal Year
+                                Fiscal Year, Payee Name
                                 and Pay Type are required fields.
                             </strong>
                         </p>
@@ -83,9 +93,16 @@
 </div>
 
 @*@section Scripts {
+
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#tblSearch tr:nth-child(even)").addClass("even");
+            $('#btnClearAll').click(function () {
+                $(':input').not(':button, :submit, :reset, :hidden').val('');
+            });
+        });
+      
+            $(document).ready(function () {
+                $("#tblSearch tr:nth-child(even)").addClass("even");
             $("#tblSearch tr:nth-child(odd)").addClass("odd");
         });
 

@@ -133,6 +133,8 @@ namespace PayrollWarrant.Controllers
 
         }
 
+       
+
         private void PopulateViewBagLists(PayrollWarrantEntities1 db)
         {
             //ViewBag.FISCAL_YEAR = db.T101_PAY_WARNT.ToList().Select(c => new SelectListItem { Value = c.FISCAL_YEAR, Text = c.FISCAL_YEAR }).ToList();
@@ -148,26 +150,54 @@ namespace PayrollWarrant.Controllers
         {
             IQueryable<Models.T101_PAY_WARNT> query = db.T101_PAY_WARNT;
 
-            if (!(data.PAYEE_NAME == null || data.PAYEE_NAME.Equals("")))
+            if (data.searchType == "Contains")
             {
-                query = query.Where(c => c.PAYEE_NAME.Contains(data.PAYEE_NAME));
-            }
-            if (!(data.FISCAL_YEAR == null || data.FISCAL_YEAR.Equals("")))
-            {
-                query = query.Where(c => c.FISCAL_YEAR.Equals(data.FISCAL_YEAR));
-            }
 
-            if (!(data.CHECK_NO == null || data.CHECK_NO.Equals("")))
-            {
-                query = query.Where(c => c.CHECK_NO.Contains(data.CHECK_NO));
+                if (!(data.PAYEE_NAME == null || data.PAYEE_NAME.Equals("")))
+                {
+                    query = query.Where(c => c.PAYEE_NAME.Contains(data.PAYEE_NAME));
+                }
+                if (!(data.FISCAL_YEAR == null || data.FISCAL_YEAR.Equals("")))
+                {
+                    query = query.Where(c => c.FISCAL_YEAR.Equals(data.FISCAL_YEAR));
+                }
 
-            }
-            if (!(data.DETAIL_TYPE == null || data.DETAIL_TYPE.Equals("")))
-            {
-                query = query.Where(c => c.DETAIL_TYPE.Contains(data.DETAIL_TYPE));
+                if (!(data.CHECK_NO == null || data.CHECK_NO.Equals("")))
+                {
+                    query = query.Where(c => c.CHECK_NO.Contains(data.CHECK_NO));
 
+                }
+                if (!(data.DETAIL_TYPE == null || data.DETAIL_TYPE.Equals("")))
+                {
+                    query = query.Where(c => c.DETAIL_TYPE.Contains(data.DETAIL_TYPE));
+
+                }
+                return query;
             }
-            return query;
+            else 
+            {
+                if (!(data.PAYEE_NAME == null || data.PAYEE_NAME.Equals("")))
+                {
+                    query = query.Where(c => c.PAYEE_NAME.StartsWith(data.PAYEE_NAME));
+                }
+                if (!(data.FISCAL_YEAR == null || data.FISCAL_YEAR.Equals("")))
+                {
+                    query = query.Where(c => c.FISCAL_YEAR.Equals(data.FISCAL_YEAR));
+                }
+
+                if (!(data.CHECK_NO == null || data.CHECK_NO.Equals("")))
+                {
+                    query = query.Where(c => c.CHECK_NO.Contains(data.CHECK_NO));
+
+                }
+                if (!(data.DETAIL_TYPE == null || data.DETAIL_TYPE.Equals("")))
+                {
+                    query = query.Where(c => c.DETAIL_TYPE.Contains(data.DETAIL_TYPE));
+
+                }
+                return query;
+            }
+       
         }
         protected override void Dispose(bool disposing)
         {
