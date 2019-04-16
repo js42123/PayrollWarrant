@@ -12,11 +12,14 @@ namespace PayrollWarrant.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
-    
+    using System.Globalization;
+
     public partial class T101_PAY_WARNT
     {
-        public List<T101_PAY_WARNT> SearchResults { get; set; }
+
+            
+    
+    public List<T101_PAY_WARNT> SearchResults { get; set; }
 
         [Required]
         [Display(Name = "Fiscal Year")]
@@ -26,7 +29,8 @@ namespace PayrollWarrant.Models
         [Display(Name = "Agency")]
         public string AGENCY { get; set; }
         [Display(Name = "Check Payment Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public string CHK_PRINT_DATE { get; set; }
         [Display(Name = "Header Amount")]
         [DataType(DataType.Currency)]
@@ -61,7 +65,8 @@ namespace PayrollWarrant.Models
         public decimal SEQUENCE_NO { get; set; }
 
         [Display(Name = "Posting Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public string POSTING_DATE { get; set; }
         [Display(Name = "Detail Amount")]
         [DataType(DataType.Currency)]
@@ -86,5 +91,9 @@ namespace PayrollWarrant.Models
         public string searchType { get; set; }
 
         public string RefDocNo { get { return string.Format("{0}{1}{2}{3}{4}{5}{6}", PREFIX, AGENCY, REFDOC_FISCAL_YR, VOUCH_NO, PAGE_NO, LINE_NO, DETAIL_TYPE); } }
+
+     
+
     }
+  
 }

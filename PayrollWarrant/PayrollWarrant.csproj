@@ -193,6 +193,7 @@
     <Compile Include="Security\CurrentUser.cs" />
     <Compile Include="Security\Roles.cs" />
     <Compile Include="UserInfoBase.cs" />
+    <Compile Include="ViewModel\Payroll.cs" />
     <Compile Include="ViewModel\WarrantSearch.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +303,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Warrant\_PayrollResults.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

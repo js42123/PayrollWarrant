@@ -6,7 +6,10 @@
    */
 
 /* FORM LAYOUT ELEMENTS*/
-
+.my-style {
+    outline: none;
+    border: none;
+}
 
 .container {
     width: 1800px;

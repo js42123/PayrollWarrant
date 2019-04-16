@@ -1,16 +1,14 @@
-﻿using System;
+﻿using PayrollWarrant.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using PayrollWarrant.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace PayrollWarrant.ViewModel
 {
-    public class WarrantSearch
+    public class Payroll
     {
-        public List<T101_PAY_WARNT> SearchResults { get; set; }
-
         [Required]
         [Display(Name = "Fiscal Year")]
         public string FISCAL_YEAR { get; set; }
@@ -19,9 +17,10 @@ namespace PayrollWarrant.ViewModel
         [Display(Name = "Agency")]
         public string AGENCY { get; set; }
         [Display(Name = "Check Payment Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? CHK_PRINT_DATE { get; set; }
         [Display(Name = "Header Amount")]
+        [DataType(DataType.Currency)]
         public decimal HEADER_AMT { get; set; }
         [Display(Name = "Payment Method")]
         public string PAYMENT_METHOD { get; set; }
@@ -51,10 +50,12 @@ namespace PayrollWarrant.ViewModel
         public string DETAIL_TYPE { get; set; }
         [Display(Name = "Sequence No")]
         public decimal SEQUENCE_NO { get; set; }
+
         [Display(Name = "Posting Date")]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? POSTING_DATE { get; set; }
         [Display(Name = "Detail Amount")]
+        [DataType(DataType.Currency)]
         public decimal DETAIL_AMT { get; set; }
         [Display(Name = "Document Type")]
         public string DOC_TYPE { get; set; }
@@ -72,17 +73,11 @@ namespace PayrollWarrant.ViewModel
         public string SAP_INVOICE_DOC_NO { get; set; }
         public int page { get; set; }
         public string Search { get; set; }
+        public List<T101_PAY_WARNT> PayResults { get; set; }
+
         public string searchType { get; set; }
 
-
         public string RefDocNo { get { return string.Format("{0}{1}{2}{3}{4}{5}{6}", PREFIX, AGENCY, REFDOC_FISCAL_YR, VOUCH_NO, PAGE_NO, LINE_NO, DETAIL_TYPE); } }
-
-      
     }
 
-    public enum searchBy
-    {
-        Contains,
-        BeginsWith
-    }
 }

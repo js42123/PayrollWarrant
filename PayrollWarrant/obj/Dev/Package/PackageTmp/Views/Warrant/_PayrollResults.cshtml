@@ -1,0 +1,165 @@
+﻿@model IEnumerable<PayrollWarrant.ViewModel.Payroll>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AGENCY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHK_PRINT_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HEADER_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYMENT_METHOD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOID_CHK_REASON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYEE_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYEE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAP_CLRING_DOC_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REISSUE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PREFIX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REFDOC_FISCAL_YR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VOUCH_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAGE_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LINE_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETAIL_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POSTING_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETAIL_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOC_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WBS_ELEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COST_CENTER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GL_ACCOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPANY_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAP_INVOICE_DOC_NO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AGENCY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHK_PRINT_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HEADER_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYMENT_METHOD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOID_CHK_REASON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYEE_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYEE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAP_CLRING_DOC_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REISSUE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PREFIX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REFDOC_FISCAL_YR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VOUCH_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAGE_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LINE_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DETAIL_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSTING_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DETAIL_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOC_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WBS_ELEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COST_CENTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GL_ACCOUNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPANY_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAP_INVOICE_DOC_NO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

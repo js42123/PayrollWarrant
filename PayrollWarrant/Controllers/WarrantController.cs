@@ -2,6 +2,7 @@
 using PayrollWarrant.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +13,9 @@ namespace PayrollWarrant.Controllers
     {
         private PayrollWarrantEntities1 db = new PayrollWarrantEntities1();
         private int page;
+
+       
+
 
         // GET: Warrant
         public ActionResult Index(int page = 1)
@@ -57,6 +61,8 @@ namespace PayrollWarrant.Controllers
         {
             using (var db = new PayrollWarrantEntities1())
             {
+
+                var newDate = DateTime.ParseExact("20170712", "yyyyMMdd", CultureInfo.InvariantCulture);
                 var model = new WarrantSearch();
                 PopulateViewBagLists(db);
 
@@ -87,6 +93,7 @@ namespace PayrollWarrant.Controllers
                                 .Skip((data.page - 1) * SharedFunctions.PerPage)
                                 .Take(SharedFunctions.PerPage)
                                 .ToList<Models.T101_PAY_WARNT>();
+                            
                             data.SearchResults = pagingList;
                         }
                     }
@@ -107,6 +114,7 @@ namespace PayrollWarrant.Controllers
                             Session["CHECK_NO"] = data.CHECK_NO;
                         if (data.DETAIL_TYPE != null)
                             Session["DETAIL_TYPE"] = data.DETAIL_TYPE;
+                     
 
                         query = query
                              .OrderBy(p => p.PAYEE_NAME)
@@ -133,22 +141,22 @@ namespace PayrollWarrant.Controllers
 
         }
 
-       
+
 
         private void PopulateViewBagLists(PayrollWarrantEntities1 db)
         {
             //ViewBag.FISCAL_YEAR = db.T101_PAY_WARNT.ToList().Select(c => new SelectListItem { Value = c.FISCAL_YEAR, Text = c.FISCAL_YEAR }).ToList();
             var fiscalYear = db.T101_PAY_WARNT.Select(x => x.FISCAL_YEAR).ToList();
             ViewBag.FISCAL_YEAR = fiscalYear.Distinct().Select(m => new SelectListItem { Value = m, Text = m });
-          
+
             var payTypes = new Dictionary<string, string>() { { " ", "" }, { "B", "Career Enhancement Pay" }, { "D", "Biweekly Payroll" }, { "S", "Supplemental Pay" }, { "T", "Comp Bank Payout" }, { "R", "Reissue" } };
             ViewBag.DETAIL_TYPE = payTypes.Select(c => new SelectListItem { Text = c.Value, Value = c.Key });
-            
         }
 
         private IQueryable<T101_PAY_WARNT> GetSearchResults(WarrantSearch data, PayrollWarrantEntities1 db, PagingListType pagingListType)
         {
             IQueryable<Models.T101_PAY_WARNT> query = db.T101_PAY_WARNT;
+         
 
             if (data.searchType == "Contains")
             {
@@ -174,7 +182,7 @@ namespace PayrollWarrant.Controllers
                 }
                 return query;
             }
-            else 
+            else
             {
                 if (!(data.PAYEE_NAME == null || data.PAYEE_NAME.Equals("")))
                 {
